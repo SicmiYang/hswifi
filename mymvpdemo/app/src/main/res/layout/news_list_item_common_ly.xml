@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/info_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="30.0dip"
+        android:layout_below="@id/title_layout"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_margin="4dip">
+
+        <TextView
+            android:id="@+id/item_source"
+            style="@style/item_secondary_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.0"
+            android:ellipsize="end"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/list_item_local"
+            style="@style/item_local"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:paddingLeft="2.0dip"
+            android:paddingRight="2.0dip" />
+
+        <View
+            android:layout_width="0.0dip"
+            android:layout_height="1.0dip"
+            android:layout_weight="1.0"
+            android:minWidth="8.0dip" />
+
+        <TextView
+            android:id="@+id/comment_count"
+            style="@style/item_secondary_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.0" />
+
+        <TextView
+            android:id="@+id/publish_time"
+            style="@style/item_secondary_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8.0dip"
+            android:layout_weight="0.0"
+            android:paddingRight="8.0dip" />
+
+        <View
+            android:id="@+id/right_padding_view"
+            android:layout_width="25.0dip"
+            android:layout_height="1.0dip"
+            android:layout_weight="0.0" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="menu_open">打开</string>
+    <string name="menu_close">关闭</string>
+
+    <string name="app_name">地铁WiFi</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="exit_tips">再按一次返回退出</string>
+    <!-- label -->
+    <string name="label_metro_info">地铁信息</string>
+    <string name="label_cover">封面</string>
+    <string name="label_register">注册</string>
+    <string name="label_account">个人信息</string>
+    <string name="label_feedback">反馈与建议</string>
+    <string name="label_about">关于我们</string>
+    <string name="label_score_shop">积分商城</string>
+    <string name="label_score_shop_descr">积分说明</string>
+    <string name="label_help">帮助中心</string>
+    <string name="label_metro_map">地铁线路</string>
+    <string name="label_wifi_rule">地铁WiFi上网协议</string>
+    <string name="label_login">登录</string>
+    <string name="label_menu">菜单</string>
+    <string name="label_wifi_switch">WiFi控制中心</string>
+    <string name="label_system_message_detail">系统通知</string>
+    <string name="label_first_time_login">快速注册</string>
+    <string name="label_setting">设置</string>
+
+    <!-- common -->
+    <string name="button_yes">是</string>
+    <string name="button_no">否</string>
+    <string name="copyrights">花生科技出品\u0020©\u00202015</string>
+    <string name="solgan">连接\u0020从此刻生长</string>
+    <string name="button_confirm">确定</string>
+    <string name="button_confirm_opennet">一键上网</string>
+    <string name="button_cancel">取消</string>
+    <string name="button_get_lucky">试试运气</string>
+    <string name="text_dialog_title">温馨提示</string>
+    <string name="text_common_dialog_title">提示</string>
+
+    <!-- main activity -->
+    <string name="text_traffic_saved">已累计为你节省</string>
+    <string name="text_click_to_connect">发现花生地铁WiFi</string>
+    <string name="text_net_opened">已连接花生地铁WiFi</string>
+    <string name="text_net_opening">拼命连接中</string>
+    <string name="text_connecting_wifi">拼命连接中～</string>
+    <string name="text_connected_wifi">轻轻点一点 WiFi马上连</string>
+    <string name="text_you_have_opened_net">你已连接网络</string>
+    <string name="text_default_mei_wen">人生就是拼命的奔跑与华丽的跌倒</string>
+    <string name="text_found_new_version">发现新版本，是否下载？</string>
+    <string name="text_checking_net_status">正在检测网络状态</string>
+    <string name="text_pm25">PM2.5</string>
+    <string name="text_reconnecting_scanning_wifi">正在扫描WiFi尝试重连</string>
+    <string name="text_reconnecting">正在尝试重新连接花生地铁WiFi</string>
+    <string name="text_reconnect_failed">重连失败，你似乎离开了地铁WiFi环境</string>
+    <string name="text_done_open_net_1">WiFi已连接</string>
+    <string name="text_done_open_net_2">像土豪一样任性去吧!</string>
+    <string name="text_open_net_failed">网络连接受不明物体阻碍，\n请陛下到信号好一点的地方重试吧</string>
+    <string name="text_try_again">重试</string>
+    <string name="text_queue_title">网络拥堵</string>
+    <string name="text_queue_current_point">目前积分:</string>
+    <string name="text_queue_cost" formatted="false">使用%d点积分</string>
+    <string name="text_queue_cost_1">使用</string>
+    <string name="text_queue_cost_2">点积分</string>
+    <string name="text_queue_target">强制突破网络拥堵一次</string>
+    <string name="text_queue_failed_1">亲～网络已达上限，</string>
+    <string name="text_queue_failed_2">可到附近的车厢试试运气哦～</string>
+    <string name="text_no_enough_credit">积分不够啦~有积分再重试吧</string>
+    <string name="text_get_daily_credit">每天登录刷流量\n开网积分就送上～</string>
+    <string name="text_get_register_credit">首次登陆成就达成，\n火辣辣的积分已存入你的账户～</string>
+    <string name="text_credit">积分</string>
+    <string name="text_credit_contratulations">恭喜你！</string>
+    <string name="text_credit_plus">+</string>
+    <string name="text_gaofengqi">高峰期 太多人上网啦</string>
+    <string name="text_lingliulang">不耗流量 随便刷</string>
+    <string name="text_queue">排队</string>
+    <string name="text_queue_current_crowded">目前上我人数较多\n需排队上我</string>
+    <string name="text_queue_tips_wait">表急嘛很快咯，前面还有%d人咯</string>
+    <string name="text_button_in_queue">排队中</string>
+    <string name="text_open_net_done_in_queue">使用%d点积分强制开网成功\n没有人可以拦得住你</string>
+    <string name="text_open_net_failed_in_queue">排队开网未成功，请重试</string>
+    <string name="text_toast_queue_status">排队太无聊？点逛一逛</string>
+    <string name="text_queue_current_user" formatted="false">你前面有%d位用户</string>
+    <string name="text_surfing_current_user_1">现在已达</string>
+    <string name="text_surfing_current_user_2">用户上限</string>
+    <string name="text_use_credit_to_queue_and_wait" formatted="false">需消耗%d积分加入排队等待\n预计等待时间为%d分钟</string>
+    <string name="text_use_credit_to_queue_1">需消耗</string>
+    <string name="text_use_credit_to_queue_2">积分加入排队等待</string>
+    <string name="text_use_credit_to_wait_1">预计等待时间为</string>
+    <string name="text_use_credit_to_wait_2">分钟</string>
+    <string name="text_open_net_title">花生提示</string>
+    <string name="text_open_net_content">点击“一键上网”后才能开网成功哦</string>
+
+
+    <!-- account activity -->
+    <string name="button_change_name">更改</string>
+    <string name="button_quit_app">退出登录</string>
+    <string name="account_user_image_text">头像</string>
+    <string name="account_nickname_text">昵称</string>
+    <string name="account_sex_text">性别</string>
+    <string name="account_birthday_text">生日</string>
+    <string name="account_constellation_text">星座</string>
+    <string name="account_fav_text">爱好</string>
+    <string name="account_info_edit_save">保存</string>
+    <string name="account_info_edit_cancle">取消</string>
+
+    <string name="account_nickname_default">花生用户</string>
+    <string name="account_sex_male">男</string>
+    <string name="account_sex_female">女</string>
+    <string name="account_constellation_default">水瓶座</string>
+    <string name="account_birthday_default">1992-08-22</string>
+    <string name="account_fav_default">唱歌\u0020电影</string>
+
+    <string name="account_info_edit_nickname">修改昵称</string>
+    <string name="account_info_edit_sex">修改性别</string>
+    <string name="account_info_edit_birthday">修改生日</string>
+    <string name="account_info_edit_birthday_wheel">设置生日</string>
+    <string name="account_info_edit_fav">修改爱好</string>
+    <string name="user_info_fav_food">美食</string>
+    <string name="user_info_fav_shopping">购物</string>
+    <string name="user_info_fav_singing">K歌</string>
+    <string name="user_info_fav_movie">电影</string>
+    <string name="user_info_fav_game">游戏</string>
+    <string name="user_info_fav_telephone">手机数码</string>
+    <string name="user_info_fav_sport">体育运动</string>
+    <string name="user_info_fav_travel">旅游</string>
+    <string name="user_info_fav_car">汽车</string>
+
+    <string name="user_info_saving">正在保存...</string>
+    <string name="user_info_save_successfully">保存成功</string>
+    <string name="user_info_save_fail">保存失败</string>
+
+
+    <!-- about activity -->
+    <string name="about_title_1">梦不会落空\n因为我敢伸手去触碰</string>
+    <string name="about_text_1">花生科技由一群敢于去实现梦想的狂人共同建立并抱着一个为地铁用户建设出一张Wi-Fi网络的愿望不断去奔跑着。</string>
+    <string name="about_title_2">那些你看见的美好\n都少不了在泥泞道路上的奔跑</string>
+    <string name="about_text_2">除了你现在正在使用的上海地铁Wi-Fi网络之外，花生科技还建设了深圳、广州、昆明、武汉、贵阳Wi-Fi网络，这些地铁网络背后凝聚这程序猿、工程狮无数个通宵奋战的辛苦。</string>
+    <string name="about_title_3">一路有你的同行\n是我梦寐以求的幸运</string>
+    <string name="about_text_3">一群勇于实现梦想的人一定会吸引更多小伙伴的加入，花生科技在发展的过程中也吸引了相当多志同道合的小伙伴，360集团、平安集团、光启松禾资本。</string>
+    <string name="about_made">花生科技出品</string>
+    <string name="about_infor_title">花生科技,为爱发声</string>
+    <string name="about_infor_description">"        "花生科技,一家很酷的互联网公司.由一群敢于去实现梦想的狂人共同建立,并抱着一个为全中国地铁用户建设出一张超高带WIFI网络,构建一个围绕地铁而在的生态圈的愿望,不断去奔跑着,实现着.</string>
+    <string name="about_infor_url">官方网址:"  "http://www.wifi8.com</string>
+    <string name="about_infor_weibo">官方微博:"  "@花生无线</string>
+    <string name="about_infor_weixin">官方微信:"  "地铁wifi</string>
+    <string name="about_infor_cooperation_phone">商业合作:"  "4001-877-877</string>
+    <string name="about_infor_qa_phone">问题投诉:"  "4001-877-877</string>
+
+    <string name="about_content_1">梦不会落空</string>
+    <string name="about_content_11">因为我敢伸手去触碰</string>
+    <string name="about_content_111">花生科技由一群敢于去实现梦想的狂人共同建立，并抱着一个为地铁用户建设出一张Wi-Fi网络的愿望不断去奔跑着。</string>
+
+    <string name="about_content_2">那些你看见的美好</string>
+    <string name="about_content_22">都少不了在泥泞道路上的奔跑</string>
+    <string name="about_content_222">除了你现在正在使用的上海地铁Wi-Fi网络之外，花生科技还建设了深圳、广州、昆明、武汉、贵阳Wi-Fi网络，这些地铁网络背后凝聚这程序猿、工程狮无数个通宵奋战的辛苦。</string>
+
+    <string name="about_content_3">一路有你的同行</string>
+    <string name="about_content_33">是我梦寐以求的幸运</string>
+    <string name="about_content_333">一群勇于实现梦想的人一定会吸引更多小伙伴的加入，花生科技在发展的过程中也吸引了相当多志同道合的小伙伴，360集团、平安集团、光启松禾资本。</string>
+    <!-- feedback activity -->
+    <string name="edittext_hint">反馈内容填写</string>
+    <string name="text_feedback_content">你希望改进的问题</string>
+    <string name="text_feedback_new_feature">你期待的新功能</string>
+    <string name="text_feedback_email">邮箱</string>
+    <string name="button_feedback">提\u0020交</string>
+    <string name="hint_feedback">请输入反馈建议</string>
+    <string name="tab_title_system_message">系统通知</string>
+    <string name="tab_title_feedback">我要反馈</string>
+    <string name="text_custom_service">花生客服</string>
+    <string name="text_feedback_welcome">你现在已经进入反馈系统，我们会珍视你的每一个宝贵意见。当然你也可以吐槽,只要你能吐，我就有槽接～</string>
+    <string name="text_feedback_thanks">感谢亲的反馈，我们会尽快回复的～</string>
+
+    <!-- menu activity -->
+    <string name="text_menu_score_shop">积分商城</string>
+    <string name="text_menu_pay_score">账户充值</string>
+    <string name="text_menu_account">账户</string>
+    <string name="text_menu_feedback">反馈与建议</string>
+    <string name="text_menu_clear_cache">清除缓存</string>
+    <string name="text_menu_help">帮助中心</string>
+    <string name="text_menu_about">关于我们</string>
+    <string name="text_menu_version">版本说明</string>
+    <string name="text_menu_update">版本升级</string>
+    <string name="text_menu_nickname_default">花生用户</string>
+    <string name="text_menu_user_mood_default">感觉自己萌萌哒</string>
+
+    <!-- wifi switch activity -->
+    <string name="wifi_switch_activity_wifi_status_not_open">你的手机当前未开启WLAN</string>
+    <string name="wifi_switch_button_open_wifi">开启WLAN</string>
+    <string name="wifi_switch_wifi_opened">WLAN已打开</string>
+    <string name="wifi_switch_opening">打开中</string>
+
+    <!-- wifi rule activity -->
+    <string name="text_rule_title_1">1. 特别提示</string>
+    <string name="text_rule_text_1">1.1\u0020花生科技同意按照本协议的规定及其不时发布的操作规则提供基于互联网的相关服务（以下称“网络服务”），为获得网络服务，服务使用人（以下称“用户”）应当同意本协议的全部条款并按照页面上的提示完成全部的注册程序。用户在成功注册后表示用户完全接受本协议项下的全部条款。\n
+        1.2\u0020地铁WiFi_测试为花生科技供地铁WiFi网络服务测试使用，服务测试截止期限由花生科技另行通知。</string>
+    <string name="text_rule_title_2">2. 服务内容</string>
+    <string name="text_rule_text_2">2.1\u0020花生科技网络服务的具体内容由花生科技根据实际情况提供，包含但不限于软件、多媒体、广告等。花生科技保留随时变更、中断或终止部分或全部网络服务的权利。\n
+        2.2\u0020花生科技在提供网络服务时，可能会对部分网络服务收取一定的费用。在此情况下，花生科技会在相关页面上做明确的提示。如用户拒绝支付该等费用，则不能使用相关的网络服务。\n
+        2.3\u0020花生科技提供用户免费的WiFi网络服务，以及相关网络服务有关的设备（调制解调器及与接入互联网有关的装置，不包括终端设备）。对于用户上网所支付的费用（如为接入互联网而支付给其他服务商的电话费及短信费）均应由用户自行负担。</string>
+    <string name="text_rule_title_3">3. 使用规则</string>
+    <string name="text_rule_text_3">3.1\u0020用户在申请使用花生科技网络服务时，必须向花生科技提供准确的个人认证资料，如个人资料有任何变动，需及时更正认证资料。\n
+        3.2\u0020用户注册成功后，花生科技将给予每个用户一个使用网络的账户，用户应当对以其用户帐号进行的所有活动和事件负法律责任。\n
+        3.3\u0020用户必须同意接受花生科技通过短信或其他方式向用户发送的商品促销或其他相关商业信息。\n
+        3.4\u0020用户在使用花生科技网络服务过程中，必须遵循以下原则：\n
+        \u0020\u0020(a)遵守中国有关的法律和法规；\n
+        \u0020\u0020(b)不得为任何非法目的而使用网络服务系统；\n
+        \u0020\u0020(c)遵守所有与网络服务有关的网络协议、规定和程序；\n
+        \u0020\u0020(d)不得利用花生科技网络服务系统进行任何可能对互联网的正常运转造成不利影响的行为；\n
+        \u0020\u0020(e)不得利用花生科技网络服务系统传输任何骚扰性的、中伤他人的、辱骂性的、恐吓性的、庸俗淫秽的或其他任何非法的信息资料；\n
+        \u0020\u0020(f)不得利用花生科技网络服务系统进行任何不利于花生科技的行为；\n
+        \u0020\u0020(g)如发现任何非法使用用户帐号或帐号出现安全漏洞的情况，应立即通告花生科技。\n
+        3.5\u0020如用户在使用网络服务时违反任何上述规定，花生科技或及其授权的人有权要求用户改正或直接采取一切必要的措施（包括但不限于更改或删除用户张贴的内容等、暂停或终止用户使用网络服务的权利）以减轻用户不当行为造成的影响。\n
+    </string>
+    <string name="text_rule_title_4">4. 内容所有权</string>
+    <string name="text_rule_text_4">4.1\u0020花生科技提供的网络服务内容包括但不限于：资讯、软件、多媒体、广告等。所有这些内容受版权、商标和其它财产所有权法律的保护。\n
+        4.2\u0020用户只有在获得花生科技或其他相关权利人的授权之后才能使用这些内容，而不能擅自复制、再造这些内容、或创造与内容有关的派生产品。</string>
+    <string name="text_rule_title_5">5. 隐私保护</string>
+    <string name="text_rule_text_5">5.1\u0020保护用户隐私是花生科技的一项基本政策，花生科技保证不对外公开或向第三方提供用户注册资料及用户在使用网络服务时存储在花生科技的非公开内容，但下列情况除外：\n
+        \u0020\u0020(a)事先获得用户的明确授权；\n
+        \u0020\u0020(b)根据有关的法律法规要求；\n
+        \u0020\u0020(c)按照相关政府主管部门的要求；\n
+        \u0020\u0020(d)为维护社会公众的利益；\n
+        \u0020\u0020(e)为维护花生科技的合法权益。\n
+        5.2\u0020花生科技可能会与第三方合作向用户提供相关的网络服务，在此情况下，如该第三方同意承担与花生科技同等的保护用户隐私的责任，则花生科技可将用户的注册资料等提供给该第三方。\n
+        5.3\u0020在不透露单个用户隐私资料的前提下，花生科技有权对整个用户数据库进行分析并对用户数据库进行商业上的利用。</string>
+    <string name="text_rule_title_6">6. 免责声明</string>
+    <string name="text_rule_text_6">6.1\u0020用户明确同意其使用花生科技网络服务所存在的风险将完全由其自己承担；因其使用花生科技网络服务而产生的一切后果也由其自己承担，花生科技对用户不承担任何责任。\n
+        6.2\u0020花生科技担保网络服务一定能满足用户的要求，也担保网络服务不会中断，对网络服务的及时性、安全性、准确性也都不作担保。\n
+        6.3\u0020花生科技不保证为向用户提供便利而设置的外部链接的准确性和完整性，同时，对于该等外部链接指向的不由花生科技实际控制的任何网页上的内容，花生科技不承担任何责任。\n
+        6.4\u0020对于因不可抗力或花生科技不能控制的原因造成的网络服务中断或其它缺陷，花生科技网不承担任何责任，但将尽力减少因此而给用户造成的损失和影响。</string>
+    <string name="text_rule_title_7">7. 服务变更、中断或终止</string>
+    <string name="text_rule_text_7">7.1\u0020如因系统维护或升级的需要而需暂停网络服务，花生科技将尽可能事先进行通告。\n
+        7.2\u0020如发生下列任何一种情形，花生科技有权随时中断或终止向用户提供本协议项下的网络服务而无需通知用户：\n
+        \u0020\u0020(a)用户提供的个人资料不真实；\n
+        \u0020\u0020(b)用户违反本协议中规定的使用规则。\n
+        7.3\u0020除前款所述情形外，花生科技同时保留在不事先通知用户的情况下随时中断或终止部分或全部网络服务的权利，对于所有服务的中断或终止而造成的任何损失，花生科技无需对用户或任何第三方承担任何责任。</string>
+    <string name="text_rule_title_8">8. 违约赔偿</string>
+    <string name="text_rule_text_8">8.1\u0020用户同意保障和维护花生科技及其他用户的利益，如因用户违反有关法律、法规或本协议项下的任何条款而给花生科技或任何其他第三人造成损失，用户同意承担由此造成的损害赔偿责任。</string>
+    <string name="text_rule_title_9">9. 协议修改</string>
+    <string name="text_rule_text_9">9.1\u0020花生科技将有权随时修改本协议的有关条款，一旦本协议的内容发生变动，花生科技将会通过适当方式向用户提示修改内容。\n
+        9.2\u0020如果不同意花生科技对本协议相关条款所做的修改，用户有权停止使用网络服务。如果用户继续使用网络服务，则视为用户接受花生科技对本协议相关条款所做的修改。</string>
+    <string name="text_rule_title_10">10. 法律管辖</string>
+    <string name="text_rule_text_10">10.1\u0020本协议的订立、执行和解释及争议的解决均应适用中国法律。\n
+        10.2\u0020如双方就本协议内容或其执行发生任何争议，双方应尽量友好协商解决；协商不成时，任何一方均可向花生科技所在地的人民法院提起诉讼。</string>
+    <string name="text_rule_title_11">11. 通知和送达</string>
+    <string name="text_rule_text_11">11.1\u0020本协议项下所有的通知均可通过重要页面公告、电子邮件或常规的信件传送等方式进行；该等通知于发送之日视为已送达收件人。</string>
+    <string name="text_rule_title_12">12. 其他规定</string>
+    <string name="text_rule_text_12">12.1\u0020本协议构成双方对本协议之约定事项及其他有关事宜的完整协议，除本协议规定的之外，未赋予本协议各方其他权利。\n
+        12.2\u0020如本协议中的任何条款无论因何种原因完全或部分无效或不具有执行力，本协议的其余条款仍应有效并且有约束力。\n
+        12.3\u0020本协议中的标题仅为方便而设，在解释本协议时应被忽略。</string>
+
+    <!-- activity no conf wifi -->
+    <string name="text_sorry">非常抱歉</string>
+    <string name="text_sorry_1">只有在13号线才可以使用哦～</string>
+    <string name="text_sorry_2">其他线路也会陆续开通哒</string>
+    <string name="text_reconnect">重新连接</string>
+    <string name="text_exit">稍后再试</string>
+
+    <!-- first time activity -->
+    <string name="text_welcome_message">完成以上四步 即可连接地铁WiFi</string>
+    <string name="button_experience">马上体验</string>
+
+    <!-- fragment first time login -->
+    <string name="button_start_app">启\u0020动</string>
+
+    <!-- fragment cover -->
+    <string name="text_app_name">地铁wifi</string>
+    <string name="text_fast_wifi">连接\u0020\u0020从此刻生长</string>
+    <string name="cover_text">一\u0020切\u0020从\u0020连\u0020接\u0020开\u0020始</string>
+    <string name="cover_copyrights">Copyright\u0020©\u00202014-2015\u0020花生科技\u0020版权所有</string>
+    <string name="starting_app">正在启动地铁wifi</string>
+    <string name="done_connected_wifi">已成功连接到地铁WiFi</string>
+    <string name="checking_wifi_switch">检测WLAN是否开启</string>
+    <string name="checking_account">正在进行账户信息验证</string>
+    <string name="scanning_for_conf_wifi">扫描花生WiFi环境</string>
+    <string name="connecting_conf_wifi">正在连接花生WiFi</string>
+
+    <!-- fragment welcome back -->
+    <string name="text_welcome">欢\u0020迎\u0020回\u0020来</string>
+    <string name="text_enjoy_wifi">畅\u0020游\u0020免\u0020费\u0020无\u0020线\u0020上\u0020网</string>
+
+    <!-- fragment register 1 -->
+    <string name="button_experience_now">立\u0020即\u0020体\u0020验</string>
+
+    <!-- fragment register 2 -->
+    <string name="text_first_edition_welcome_1">抢先成为地铁WiFi首批测试用户</string>
+    <string name="text_first_edition_welcome_2">你的每一个建议都是我们改进的动力</string>
+    <string name="button_connect_now">登录上网</string>
+    <string name="button_just_look_around">随便逛逛</string>
+    <string name="text_agree_and_read">同意并阅读</string>
+    <string name="text_metro_wifi_rule">地铁WiFi相关条例</string>
+    <string name="input_phone_number_hint">仅首次登录需输入手机号码</string>
+    <string name="input_verify_code_hint">输入验证码</string>
+    <string name="button_fetch_verify_code">获取验证码</string>
+    <string name="button_request_sent">请求已发送</string>
+    <string name="button_logining">登录中</string>
+    <string name="button_relogin">再次尝试</string>
+    <string name="text_reverify"><u>重新验证</u></string>
+    <string name="text_finish_register">完成</string>
+    <string name="text_register_tip">验证码已经发到你的手机上咯\n瞄一眼\t然后填写吧</string>
+
+    <!-- toast -->
+    <string name="cannot_write_file">无法保存文件</string>
+    <string name="request_to_quit">再按一次退出程序</string>
+    <string name="feature_not_available">测试版本暂不开放此功能</string>
+    <string name="need_to_agree_rule">你必须同意地铁WiFi相关条例才能链接上网</string>
+    <string name="input_right_phone_number">请输入正确的手机号</string>
+    <string name="input_verify_code">请输入验证码</string>
+    <string name="feedback_send_failed">发送失败</string>
+    <string name="current_code">亲~你当前已经升级到最新版本</string>
+    <string name="should_input_feedback_content">亲～你还没有输入内容哦</string>
+    <string name="sending_feedback">正在发送反馈</string>
+    <string name="system_error">系统错误</string>
+    <string name="scanning_wifi">扫描花生WiFi环境</string>
+    <string name="opening_wifi">正在打开WiFi</string>
+
+    <string name="input_string_is_null">输入文字不能为空</string>
+    <string name="input_string_is_same">输入文字不能和旧的一样</string>
+    <string name="input_string_too_long">输入不能超过16个字</string>
+    <string name="input_string_sex_bad_format">无效性别，请输男或女</string>
+    <string name="input_string_birthday_bad_format">日期格式错误，格式应为：年-月-日</string>
+    <string name="input_string_birthday_invalid">非法日期</string>
+    <string name="input_string_fav_is_null">请输入你的爱好</string>
+
+    <string name="error_connect_server">与服务器通信失败</string>
+    <string name="error_net_error">网络错误</string>
+    <string name="error_verify_code_need_info">请输入手机号</string>
+    <string name="error_verify_code_phoneno_error">请输入正确的手机号</string>
+    <string name="error_verify_code_send_error">验证码发送失败</string>
+    <string name="error_verify_code_send_too_fast">发送频率太快</string>
+    <string name="error_verify_code_send_too_many">今天你获取验证码的次数已达到上限</string>
+    <string name="error_verify_code_sessionkey_outtime">会话超时</string>
+    <string name="error_verify_code_regcode_error">验证码错误</string>
+    <string name="error_verify_code_net_error">网络错误</string>
+    <string name="error_login_failed">登录失败</string>
+    <string name="error_not_in_metro_wifi">亲，你当前不在地铁WiFi环境中哦！</string>
+    <string name="error_network_busy">网络繁忙</string>
+    <string name="error_nickname_need_info">昵称不能为空</string>
+    <string name="error_nickname_save_failed">保存失败</string>
+    <string name="error_connecting_timeout">网络繁忙，WiFi连接失败，请稍候再试</string>
+    <string name="error_incorrect_verify_code_length">验证码位数错误</string>
+    <string name="error_fetch_data">获取数据失败</string>
+    <string name="error_regcode_outtime">验证码超时失效</string>
+    <string name="error_reg_failed">注册失败</string>
+    <string name="error_unknown">未知错误</string>
+    <string name="error_send_feedback_failed">反馈发送失败</string>
+    <string name="error_no_update_content">无下载内容</string>
+    <string name="error_invalid_chano">渠道无效</string>
+    <string name="error_server_side">网络通信异常</string>
+
+    <!-- other -->
+    <string name="downloading">正在下载</string>
+    <string name="drawer_open">打开我的账户</string>
+    <string name="drawer_close">关闭我的账户</string>
+    <string name="motto">外\u0020表\u0020质\u0020朴\u0020\u0020\u0020\u0020内\u0020心\u0020强\u0020大</string>
+    <string name="find_new_version_and_downloading">发现新版本，下载中</string>
+    <string name="default_user_name">花生用户</string>
+    <string name="default_user_undefined">未设置</string>
+    <string name="dialog_title_updating">正在更新</string>
+    <string name="dialog_update_hint">拒绝一成不变\n我们要给你点惊喜</string>
+
+    <!-- notification -->
+    <string name="notification_wifi_connected">地铁WiFi已连接</string>
+    <string name="notification_wifi_not_connected">地铁WiFi未连接</string>
+    <string name="notification_net_opened">网络正常</string>
+    <string name="notification_net_not_opened">外网未开通</string>
+    <string name="notification_net_defaul">网络正常</string>
+    <string name="notification_queue_open_net_done">您已经排队开网成功,扣除%d积分!</string>
+    <string name="notification_queue_open_net_failed">排队开网未能成功,请重试...</string>
+
+    <!-- weather -->
+    <string name="weather_aqi_level_0">优</string>
+    <string name="weather_aqi_level_1">良</string>
+    <string name="weather_aqi_level_2">差</string>
+    <string name="weather_aqi_level_3">轻度</string>
+    <string name="weather_aqi_level_4">中度</string>
+    <string name="weather_aqi_level_5">重度</string>
+    <string name="weather_aqi_level_6">严重</string>
+    <string name="weather_na">N/A</string>
+
+    <!-- talking data -->
+    <string name="td_event_new_user_register">新用户注册成功</string>
+    <string name="td_event_old_user_register">退出（卸载）</string>
+    <string name="td_event_request_verify_code">用户请求验证码</string>
+    <string name="td_event_user_quit_login">用户退出登录</string>
+    <string name="td_event_user_click_to_connect">用户点击上公网按钮</string>
+    <string name="td_event_user_click_found_notification">用户点击了发现WiFi通知</string>
+    <string name="td_event_user_click_ongoing_notification">用户点击了常驻通知</string>
+    <string name="td_event_show_notification">APP显示一次通知</string>
+    <string name="td_event_user_open_net_successfully">用户成功开公网</string>
+    <string name="td_event_user_clicked_surfing_in_main_activity">用户点击了主界面的逛一逛</string>
+    <string name="td_event_user_clicked_surfing_in_login_activity">用户点击了登录界面的逛一逛</string>
+    <string name="td_event_button_open_portal">用户点击开网按钮弹出portal页</string>
+    <string name="td_event_button_open_portal_clicked_again">用户在已经开网的情况下又点击了开网按钮</string>
+    <string name="td_event_button_open_portal_warning">网络预警逛一逛</string>
+    <string name="td_event_button_open_portal_crowded">网络拥堵逛一逛</string>
+    <string name="td_event_button_warning_clicked">预警线消耗积分确认</string>
+    <string name="td_event_warning_open_net_done">预警线消耗积分连网</string>
+    <string name="td_event_button_queue_clicked">排队消耗积分确认</string>
+    <string name="td_event_queued_open_net">排队消耗积分连网</string>
+    
+    <!--score shop-->
+    <string name="score_shop_user_score_total_pre">当前积分</string>
+    <string name="score_shop_user_score_total_end">分</string>
+    <string name="score_shop_user_score_total_value_default">0</string>
+    <string name="score_shop_user_score_descr">积分说明</string>
+    <string name="score_shop_box_descr">更多积分敬请期待...</string>
+    
+    <string name="score_shop_descr_get_tittle">积分获取</string>
+    <string name="score_shop_descr_get_content">你可通过注册、每日首次登录、活动、抽奖、完善信息、签到、购买等获取积分。</string>
+    <string name="score_shop_descr_use_tittle">积分使用</string>
+    <string name="score_shop_descr_use_content">积分可以用来兑换网络拥堵时的上网名额等（后续还可以兑换其它的活动物品）。</string>
+    <string name="score_shop_descr_valid_tittle">积分有效期</string>
+    <string name="score_shop_descr_valid_content">获取之日起到次月月底</string>
+    <string name="score_shop_descr_check_tittle">积分查询</string>
+    <string name="score_shop_descr_check_content">你可以在“个人中心-积分商城”中，查看到你的累计积分。</string>
+    <string name="score_shop_descr_active_tittle">积分活动</string>
+    <string name="score_shop_descr_active_content">不定期会推出各种积分活动，参与后会扣减相应的积分。</string>
+    <string name="score_shop_descr_detail_tittle">积分细则</string>
+    <string name="score_shop_descr_detail_content">积分可以累积，不同的账号积分不可合并使用或赠送。</string>
+
+    <!-- card -->
+    <string name="usercenter_unlogin_notice">点击头像登录</string>
+    <string name="usercenter_point_title">积分商城</string>
+    <string name="usercenter_point_nologin">请先登录</string>
+    <string name="usercenter_point_login">我的积分：%1$d</string>
+    <string name="usercenter_login_out">正在退出...</string>
+
+    <string name="usercenter_download_title">我的下载</string>
+    <string name="usercenter_download_subtitle">共下载%1$d项</string>
+
+    <string name="usercenter_fav_title">我的收藏</string>
+    <string name="usercenter_fav_subtitle">共收藏%1$d项</string>
+
+    <string name="usercenter_setting_title">设置</string>
+
+    <string name="search_hints">搜索或输入网址</string>
+
+    <string name="settings_item_title_check_update">检查更新</string>
+    <string name="settings_item_title_clean_cache">清除缓存</string>
+    <string name="settings_item_title_feedback">意见反馈</string>
+    <string name="settings_item_title_about">关于花生</string>
+
+    <string name="wifi_status_not_open">请开启手机WLAN后再试</string>
+    <string name="wifi_connecting">连接WiFi中...</string>
+    <string name="wifi_connected">WiFi已连接, 像土豪一样任性去吧!</string>
+
+    <string name="user_logining">正在登录...</string>
+
+    <string name="checking_update">正在检查更新...</string>
+
+    <string name="clear_cache_ensure_dialog_title">清理缓存</string>
+    <string name="clear_cache_ensure_dialog_content">确定清理缓存？</string>
+    <string name="clear_cache_dialog_clearing">正在清理...</string>
+
+    //统计
+    <string name="statistics_01">APP启动-未登录</string>
+    <string name="statistics_02">呼出登陆界面-一键连网</string>
+    <string name="statistics_03">呼出登陆界面-其他位置</string>
+    <string name="statistics_04">手机号码输入</string>
+    <string name="statistics_05">获取验证码点击</string>
+    <string name="statistics_06">验证码下发-成功</string>
+    <string name="statistics_07">验证码下发-失败</string>
+    <string name="statistics_08">验证码输入</string>
+    <string name="statistics_09">登陆上网点击</string>
+    <string name="statistics_10">登陆确认-成功</string>
+    <string name="statistics_11">登陆确认-失败</string>
+    <string name="statistics_12">连网认证1-成功</string>
+    <string name="statistics_13">连网认证1-失败</string>
+
+    <string name="statistics_21">APP启动-已登录</string>
+    <string name="statistics_22">连网入口点击-一键连网</string>
+    <string name="statistics_23">连网入口点击-Tips确定</string>
+    <string name="statistics_24">连网入口点击-Tips取消</string>
+    <string name="statistics_25">连网认证2-成功</string>
+    <string name="statistics_26">连网认证2-失败</string>
+    <string name="statistics_27">连网入口点击-其他位置</string>
+    <string name="open_wlan_manually">系统设置中打开wlan再重新连接吧</string>
+    <string name="text_try_again_login">注册遇到问题，换个信号好点的地方重新尝试吧</string>
+    <string name="text_try_again_register">用户已注销，请重新注册</string>
+    <string name="error_alias_empty">别名不能为空</string>
+    <string name="txt_getverify_success">验证码正在火速赶往你的手机，请注意查收哦</string>
+    <string name="unknow_error_verify_code">验证码传输受不明原因拦截稍后再试吧</string>
+
+
+    <string name="left_drawer_no_login_tip">登录后，将推荐给你更多感兴趣的文章</string>
+    <string name="left_drawer_item_search">搜索</string>
+    <string name="left_drawer_item_favorite">收藏</string>
+    <string name="left_drawer_item_message">消息</string>
+    <string name="left_drawer_item_offline">离线</string>
+    <string name="left_drawer_item_offline_cancel">取消离线</string>
+    <string name="left_drawer_item_activity">活动</string>
+    <string name="left_drawer_item_setting">设置</string>
+    <string name="left_drawer_item_feedback">反馈</string>
+    <string name="left_drawer_item_appstore">精彩应用</string>
+    <string name="drawer_right_logout_hint_text">"登录后 可关注好友评论和收藏"</string>
+    <string name="drawer_right_tip_no_login">未登录</string>
+    <string name="ss_pattern_update">发现%1$d条更新</string>
+    <string name="ss_have_a_rest">暂无更新, 休息一会儿</string>
+    <string name="action_night_mode">夜间模式</string>
+    <string name="action_day_mode">日间模式</string>
+    <string name="setting_list_mode">列表显示摘要</string>
+    <string name="setting_font_size">字体大小</string>
+    <string name="setting_list_comment">列表页评论</string>
+    <string name="setting_refresh_list">列表页刷新</string>
+    <string name="setting_load_image">2G/3G网络流量</string>
+    <string name="setting_notify">推送通知</string>
+    <string name="setting_interactive">互动插件</string>
+    <string name="setting_share_when_favor">收藏时转发</string>
+    <string name="setting_share_when_diggbury">顶踩时转发</string>
+    <string name="setting_clear">清理缓存</string>
+    <string name="setting_feedback">意见反馈</string>
+    <string name="setting_recommend">精彩应用推荐</string>
+    <string name="setting_update">检查新版本</string>
+    <string name="setting_night_mode">夜间模式</string>
+    <string name="setting_use_swipe">左右翻页</string>
+    <string name="setting_switch_domain">启动网络调试</string>
+    <string name="setting_close_shake_hand">关闭摇一摇切换夜间模式</string>
+    <string name="setting_use_help">使用帮助</string>
+    <string name="app_copyright">© 头条网 toutiao.com</string>
+    <string name="favorite_btn_delete">删除</string>
+    <string name="favorite_btn_edit">编辑</string>
+    <string name="favorite_btn_cancel">取消</string>
+    <string name="dislike_dlg_lable_speech">读文章</string>
+    <string name="drawer_btn_rss">频道管理</string>
+    <string name="subscribe_my_category">我的频道</string>
+    <string name="subscribe_more_category">更多频道</string>
+    <string name="subscribe_manager_category_info">单击增删频道</string>
+    <string name="subscribe_manager_category_info_2">单击增删频道，长按拖拽排序</string>
+    <string name="label_cancel_dislike">撤消</string>
+    <string name="day_today">今天</string>
+    <string name="day_yesterday">昨天</string>
+    <string name="day_before">前天</string>
+    <string name="search_count_fmt">发现%1$s篇文章</string>
+    <string name="pattern_update">发现%1$d条更新</string>
+    <string name="city_category_list_header">点击选择其他城市</string>
+    <string name="city_category_list_hint">选择城市，立即查看本地新闻</string>
+    <string name="city_category_list_notify_no_city">请先选择您关注的城市</string>
+    <string name="retry_large_image"><u>加载失败，点击重试</u></string>
+
+</resources>

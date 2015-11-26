@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.nfyg.hswx.views.widget.ColumnHorizontalScrollView
+        android:id="@+id/mColumnHorizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="40.0dip"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/mRadioGroup_content"
+            android:layout_width="fill_parent"
+            android:layout_height="40.0dip"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10.0dip"
+            android:paddingRight="10.0dip" />
+    </com.nfyg.hswx.views.widget.ColumnHorizontalScrollView>
+
+    <ListView android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

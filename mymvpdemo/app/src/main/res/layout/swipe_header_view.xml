@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="50dp"
+    >
+
+    <TextView
+        android:id="@+id/swipe_notice_txt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        style="@style/item_secondary_text"
+        android:gravity="center"
+        android:text="松开返回首页"/>
+
+
+    <ImageView
+        android:id="@+id/large_image"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="4.0dip"
+        android:layout_marginBottom="4.0dip"
+        android:scaleType="fitCenter"
+        android:src="@drawable/home"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>
