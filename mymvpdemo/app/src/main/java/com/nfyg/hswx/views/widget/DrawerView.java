@@ -24,7 +24,7 @@ public class DrawerView implements OnClickListener{
 	public SlidingMenu initSlidingMenu() {
 		localSlidingMenu = new SlidingMenu(activity);
 		localSlidingMenu.setMode(SlidingMenu.LEFT);//设置左右滑菜单
-		localSlidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);//设置要使菜单滑动，触碰屏幕的范围
+		localSlidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);//设置要使菜单滑动，触碰屏幕的范围
 //		localSlidingMenu.setTouchModeBehind(SlidingMenu.SLIDING_CONTENT);//设置了这个会获取不到菜单里面的焦点，所以先注释掉
 		localSlidingMenu.setShadowWidthRes(R.dimen.shadow_width);//设置阴影图片的宽度
 		localSlidingMenu.setShadowDrawable(R.drawable.shadow);//设置阴影图片

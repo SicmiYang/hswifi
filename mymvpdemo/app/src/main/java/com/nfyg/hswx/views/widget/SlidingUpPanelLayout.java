@@ -38,7 +38,7 @@ public class SlidingUpPanelLayout extends ViewGroup {
     /**
      * If no fade color is given by default it will fade to 80% gray.
      */
-    private static final int DEFAULT_FADE_COLOR = 0x77000000;
+    private static final int DEFAULT_FADE_COLOR = 0x99000000;
 
     /**
      * Minimum velocity that will be detected as a fling
@@ -503,6 +503,7 @@ public class SlidingUpPanelLayout extends ViewGroup {
 
         switch (action) {
 
+
             case MotionEvent.ACTION_DOWN: {
 
                 mIsUnableToDrag = false;
@@ -528,6 +529,14 @@ public class SlidingUpPanelLayout extends ViewGroup {
                 }
             }
 
+            case MotionEvent.ACTION_UP:{
+
+                if(mSlideOffset==1){
+                    return super.onInterceptTouchEvent(ev);
+                }
+
+            }
+
 
         }
 
@@ -543,9 +552,6 @@ public class SlidingUpPanelLayout extends ViewGroup {
             return super.onTouchEvent(ev);
         }
 
-        if (mSlideOffset==0){
-            return super.onTouchEvent(ev);
-        }
 
         mDragHelper.processTouchEvent(ev);
 
@@ -558,10 +564,12 @@ public class SlidingUpPanelLayout extends ViewGroup {
                 final float y = ev.getY();
                 mInitialMotionX = x;
                 mInitialMotionY = y;
+
                 break;
             }
 
             case MotionEvent.ACTION_UP: {
+
 
                 final float x = ev.getX();
                 final float y = ev.getY();
@@ -573,7 +581,9 @@ public class SlidingUpPanelLayout extends ViewGroup {
                     View v = mDragView != null ? mDragView : mSlideableView;
                     v.playSoundEffect(SoundEffectConstants.CLICK);
                     if (!isExpanded()) {
-//                        expandPane(mSlideableView, 0);
+
+                        LogUtil.logDebug(TAG,"motion event up");
+                        expandPane(mSlideableView, 0);
                         return super.onTouchEvent(ev);
                     } else {
 //                        collapsePane();

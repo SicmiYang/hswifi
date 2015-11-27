@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.nfyg.hswx.Engine;
@@ -47,13 +48,14 @@ public class MainNewsVu  implements Vu {
 //    private SwipeRefreshLayout swipeRefreshLayout;
 
     private  View channel;
-    private LinearLayout main_layout;
+    private RelativeLayout main_layout;
 
     private boolean isbackhome = false;
     private ViewPager vpager;
     private NewsFragmentPagerAdapter pagerAdpter;
 
     private NewsChannelTopBar channleBar;
+    private View tempView;
 
 
     @Override
@@ -66,9 +68,10 @@ public class MainNewsVu  implements Vu {
         this.top_head = (ImageView) view.findViewById(R.id.top_head);
 
         this.main_content_layout = (LinearLayout) view.findViewById(R.id.main_content_layout);
-        this.main_layout = (LinearLayout) view.findViewById(R.id.main_layout);
+        this.main_layout = (RelativeLayout) view.findViewById(R.id.main_layout);
         this.vpager = (ViewPager)view.findViewById(R.id.mian_viewpager);
 
+        this.tempView = (View)view.findViewById(R.id.tempView);
     }
 
     /**
@@ -78,8 +81,8 @@ public class MainNewsVu  implements Vu {
         channleBar = new NewsChannelTopBar(Engine.application);
         channel =  channleBar.initView();
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        main_layout.addView(channel,0, layoutParams);
-        channel.setVisibility(View.GONE);
+        main_layout.addView(channel, layoutParams);
+        //channel.setVisibility(View.GONE);
         channel.scrollTo(0, 120);
 
         this.channleBar.setOnChannelItemClick(new NewsChannelTopBar.channelItemSelectedListener() {
@@ -88,6 +91,7 @@ public class MainNewsVu  implements Vu {
                 vpager.setCurrentItem(position);
             }
         });
+
 
     }
 
@@ -114,7 +118,6 @@ public class MainNewsVu  implements Vu {
 
         @Override
         public void onPageSelected(int position) {
-            // TODO Auto-generated method stub
             vpager.setCurrentItem(position);
             channleBar.selectTab(position);
         }
@@ -158,24 +161,19 @@ public class MainNewsVu  implements Vu {
                 if (channel.getVisibility() != View.VISIBLE && slideOffset > 0.5 && !isbackhome) {
                     channel.setVisibility(View.VISIBLE);
                 }
+                if (slideOffset <= 0.06&&tempView.getVisibility()!=View.VISIBLE){
+                    tempView.setVisibility(View.VISIBLE);
+                }
             }
 
             @Override
             public void onPanelCollapsed(View panel) {
                 isbackhome = false;
-                if (channel.getVisibility() != View.GONE) {
-                    channel.setVisibility(View.GONE);
-                }
-                side_drawer.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
                 LogUtil.logDebug("SlidingUpPanelLayout", "onPanelCollapsed");
             }
 
             @Override
             public void onPanelExpanded(View panel) {
-                if (channel.getVisibility() != View.VISIBLE) {
-                    channel.setVisibility(View.VISIBLE);
-                }
-                side_drawer.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
                 LogUtil.logDebug("SlidingUpPanelLayout", "onPanelExpanded");
             }
 
@@ -188,7 +186,7 @@ public class MainNewsVu  implements Vu {
             @Override
             public void execute(Signal signal, Message msg) {
                 isbackhome = true;
-                channel.setVisibility(View.GONE);
+                tempView.setVisibility(View.GONE);
                 upPanelLayout.collapsePane();
             }
         }, 0);

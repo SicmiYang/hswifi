@@ -1,13 +1,10 @@
 package com.nfyg.hswx.activities;
 
-import android.widget.Toast;
-
 import com.nfyg.hswx.AppConfig;
 import com.nfyg.hswx.BasePresentActivity;
 import com.nfyg.hswx.Engine;
 import com.nfyg.hswx.biz.bus.VCMainBus;
 import com.nfyg.hswx.biz.bus.VCViewEventBus;
-import com.nfyg.hswx.events.MainEvent;
 import com.nfyg.hswx.views.fragment.adapter.NewsFragmentPagerAdapter;
 import com.nfyg.hswx.views.subView.MainNewsVu;
 import com.nfyg.hswx.views.widget.DrawerView;
@@ -45,18 +42,15 @@ public class YmActivity extends BasePresentActivity<MainNewsVu>   {
     @Override
     protected void befrorePuse() {
         super.befrorePuse();
-        envetBus.unregister(this);
     }
 
     @Override
     protected void afterResume() {
         super.afterResume();
-        envetBus.registerSticky(this);
     }
 
     @Override
     protected boolean handleBackPressed() {
-        envetBus.removeAllStickyEvents();
         return super.handleBackPressed();
     }
 
@@ -68,12 +62,6 @@ public class YmActivity extends BasePresentActivity<MainNewsVu>   {
     @Override
     protected void onUnBindVu() {
         super.onUnBindVu();
-    }
-
-    public void onEvent(MainEvent mEvent){
-
-        Toast.makeText(this,mEvent.str,Toast.LENGTH_SHORT).show();
-
     }
 
 

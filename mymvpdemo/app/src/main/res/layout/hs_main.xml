@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/transparent">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,6 +44,13 @@
                 android:background="#00000000"
                 android:clickable="true"
                 android:orientation="vertical">
+                <View
+                    android:id="@+id/tempView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:visibility="gone"
+                    />
+
 
                     <android.support.v4.view.ViewPager
                         android:id="@+id/mian_viewpager"
@@ -53,26 +60,10 @@
 
                     </android.support.v4.view.ViewPager>
 
-
-                   <!-- <com.nfyg.hswx.views.widget.SwipeRefreshLayout
-                        android:id="@+id/swipe_refresh"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#ffffff">
-
-                        <ListView
-                            android:id="@+id/list"
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="1"></ListView>
-
-                    </com.nfyg.hswx.views.widget.SwipeRefreshLayout>-->
-
-
             </LinearLayout>
         </com.nfyg.hswx.views.widget.SlidingUpPanelLayout>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

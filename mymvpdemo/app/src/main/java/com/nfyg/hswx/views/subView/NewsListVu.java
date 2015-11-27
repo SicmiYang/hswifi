@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.nfyg.hswx.R;
@@ -31,6 +32,13 @@ public class NewsListVu extends YmVu {
 
     @Override
     public void initListener() {
+
+        this.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+        });
 
         /**
         * 设置下拉刷新回调

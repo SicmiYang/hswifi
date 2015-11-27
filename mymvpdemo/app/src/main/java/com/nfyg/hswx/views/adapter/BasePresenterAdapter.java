@@ -10,7 +10,7 @@ import com.nfyg.hswx.views.Vu;
 
 
 /**
- * Created by cwong on 3/10/15.
+ * Created by shengming.yang on 2015/11/16.
  */
 public abstract class BasePresenterAdapter<V extends Vu> extends BaseAdapter {
 
