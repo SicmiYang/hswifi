@@ -19,7 +19,17 @@ import java.util.ArrayList;
 
 
 /**
- * Created by shengming.yang on 2015/11/23.
+ * 广告图片自动轮播控件</br>
+ * 
+ * <pre>
+ *   集合ViewPager和指示器的一个轮播控件，主要用于一般常见的广告图片轮播，具有自动轮播和手动轮播功能 
+ *   然后在页面中调用  {@link #setImageResources(ArrayList, ImageCycleViewListener) }即可!
+ *   
+ *   另外提供{@link #startImageCycle() } \ {@link #pushImageCycle() }两种方法，用于在Activity不可见之时节省资源；
+ *   因为自动轮播需要进行控制，有利于内存管理
+ * </pre>
+ * 
+ * @author minking
  */
 public class ImageCycleView extends LinearLayout {
 

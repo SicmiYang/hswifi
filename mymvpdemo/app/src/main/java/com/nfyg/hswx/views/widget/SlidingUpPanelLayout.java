@@ -33,12 +33,12 @@ public class SlidingUpPanelLayout extends ViewGroup {
     /**
      * Default height of the shadow above the peeking out panel
      */
-    private static final int DEFAULT_SHADOW_HEIGHT = 4; // dp;
+    private static final int DEFAULT_SHADOW_HEIGHT = 6; // dp;
 
     /**
      * If no fade color is given by default it will fade to 80% gray.
      */
-    private static final int DEFAULT_FADE_COLOR = 0x99000000;
+    private static final int DEFAULT_FADE_COLOR = 0x77000000;
 
     /**
      * Minimum velocity that will be detected as a fling
@@ -761,6 +761,7 @@ public class SlidingUpPanelLayout extends ViewGroup {
 
         if (mShadowDrawable != null) {
             mShadowDrawable.setBounds(left, top, right, bottom);
+
             mShadowDrawable.draw(c);
         }
     }

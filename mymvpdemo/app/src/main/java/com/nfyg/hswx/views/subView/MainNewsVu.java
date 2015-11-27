@@ -1,39 +1,38 @@
 package com.nfyg.hswx.views.subView;
 
-import android.os.Handler;
+import android.os.Message;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.nfyg.hswx.Engine;
 import com.nfyg.hswx.R;
 import com.nfyg.hswx.biz.bus.VCMainBus;
 import com.nfyg.hswx.biz.manager.SystemManager;
+import com.nfyg.hswx.biz.signals.Signal;
+import com.nfyg.hswx.biz.signals.SignalListener;
 import com.nfyg.hswx.utils.common.LogUtil;
 import com.nfyg.hswx.views.Vu;
-import com.nfyg.hswx.views.widget.ColumnHorizontalScrollView;
+import com.nfyg.hswx.views.fragment.adapter.NewsFragmentPagerAdapter;
 import com.nfyg.hswx.views.widget.ImageCycleView;
+import com.nfyg.hswx.views.widget.NewsChannelTopBar;
 import com.nfyg.hswx.views.widget.SlidingUpPanelLayout;
-import com.nfyg.hswx.views.widget.SuperSwipeRefreshLayout;
 
 /**
  * Created by shengming.yang on 2015/11/23.
  */
-public class MainNewsVu implements Vu {
+public class MainNewsVu  implements Vu {
 
     private String TAG = "MainNewsVu";
 
     private View view;
 
-    private ListView lstView;
+//    private ListView lstView;
 
     private ImageCycleView imageCycleView;
 
@@ -45,55 +44,92 @@ public class MainNewsVu implements Vu {
     private SlidingUpPanelLayout upPanelLayout;
 
     private LinearLayout main_content_layout;
-    private LinearLayout mRadioGroup_content;
-    private LinearLayout ll_more_columns;
-    private RelativeLayout rl_column;
-    private ImageView button_more_columns;
-    private ColumnHorizontalScrollView mColumnHorizontalScrollView;
-    private SuperSwipeRefreshLayout swipeRefreshLayout;
+//    private SwipeRefreshLayout swipeRefreshLayout;
+
+    private  View channel;
+    private LinearLayout main_layout;
+
+    private boolean isbackhome = false;
+    private ViewPager vpager;
+    private NewsFragmentPagerAdapter pagerAdpter;
+
+    private NewsChannelTopBar channleBar;
+
 
     @Override
     public void init(LayoutInflater inflater, ViewGroup rootView) {
 
         this.view = inflater.inflate(R.layout.hs_main, rootView);
 
-        mColumnHorizontalScrollView = (ColumnHorizontalScrollView) view.findViewById(R.id.mColumnHorizontalScrollView);
-        mRadioGroup_content = (LinearLayout) view.findViewById(R.id.mRadioGroup_content);
-        mRadioGroup_content = (LinearLayout) view.findViewById(R.id.mRadioGroup_content);
-        ll_more_columns = (LinearLayout) view.findViewById(R.id.ll_more_columns);
-        rl_column = (RelativeLayout) view.findViewById(R.id.rl_column);
-        button_more_columns = (ImageView) view.findViewById(R.id.button_more_columns);
-
         this.imageCycleView = (ImageCycleView) view.findViewById(R.id.main_banner_iamgecycleview);
-        this.lstView = (ListView) view.findViewById(R.id.list);
         this.upPanelLayout = (SlidingUpPanelLayout) view.findViewById(R.id.sliding_layout);
         this.top_head = (ImageView) view.findViewById(R.id.top_head);
 
-        main_content_layout = (LinearLayout) view.findViewById(R.id.main_content_layout);
-        swipeRefreshLayout = (SuperSwipeRefreshLayout) view.findViewById(R.id.swipe_refresh);
-
+        this.main_content_layout = (LinearLayout) view.findViewById(R.id.main_content_layout);
+        this.main_layout = (LinearLayout) view.findViewById(R.id.main_layout);
+        this.vpager = (ViewPager)view.findViewById(R.id.mian_viewpager);
 
     }
+
+    /**
+     * 添加初始化频道栏
+     */
+    private void addChannelBar() {
+        channleBar = new NewsChannelTopBar(Engine.application);
+        channel =  channleBar.initView();
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        main_layout.addView(channel,0, layoutParams);
+        channel.setVisibility(View.GONE);
+        channel.scrollTo(0, 120);
+
+        this.channleBar.setOnChannelItemClick(new NewsChannelTopBar.channelItemSelectedListener() {
+            @Override
+            public void onItemSelect(int position) {
+                vpager.setCurrentItem(position);
+            }
+        });
+
+    }
+
+    /**
+     *  初始化Fragment
+     * */
+    private void initFragment() {
+
+        vpager.setAdapter(pagerAdpter);
+        vpager.setOnPageChangeListener(pageListener);
+    }
+    /**
+     *  ViewPager切换监听方法
+     * */
+    public ViewPager.OnPageChangeListener pageListener= new ViewPager.OnPageChangeListener(){
+
+        @Override
+        public void onPageScrollStateChanged(int arg0) {
+        }
+
+        @Override
+        public void onPageScrolled(int arg0, float arg1, int arg2) {
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+            // TODO Auto-generated method stub
+            vpager.setCurrentItem(position);
+            channleBar.selectTab(position);
+        }
+    };
 
     @Override
     public void initListener() {
 
-        this.lstView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                LogUtil.logDebug("ItemClickListener", "ItemClickListener：" + i);
-                upPanelLayout.collapsePane();
-                lstView.setSelection(0);
-//                lstView.smoothScrollToPosition(0);
-            }
-        });
+
 
         this.imageCycleView.setImageResources(VCMainBus.getInstanceBus().adList, new ImageCycleView.ImageCycleViewListener() {
             @Override
             public void displayImage(String imageURL, ImageView imageView) {
 
                 SystemManager.getBaseWebService().displayImg(imageView, imageURL);
-
             }
 
             @Override
@@ -117,54 +153,45 @@ public class MainNewsVu implements Vu {
         upPanelLayout.setPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
             @Override
             public void onPanelSlide(View panel, float slideOffset) {
-                //offset  0.0 ~1.0
-
                 LogUtil.logDebug("SlidingUpPanelLayout", "onPanelSlide：" + slideOffset);
-
+                channel.scrollTo(0, (int) ((slideOffset) * 120));
+                if (channel.getVisibility() != View.VISIBLE && slideOffset > 0.5 && !isbackhome) {
+                    channel.setVisibility(View.VISIBLE);
+                }
             }
 
             @Override
             public void onPanelCollapsed(View panel) {
-
+                isbackhome = false;
+                if (channel.getVisibility() != View.GONE) {
+                    channel.setVisibility(View.GONE);
+                }
+                side_drawer.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
                 LogUtil.logDebug("SlidingUpPanelLayout", "onPanelCollapsed");
             }
 
             @Override
             public void onPanelExpanded(View panel) {
-
+                if (channel.getVisibility() != View.VISIBLE) {
+                    channel.setVisibility(View.VISIBLE);
+                }
+                side_drawer.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
                 LogUtil.logDebug("SlidingUpPanelLayout", "onPanelExpanded");
-
             }
 
 
         });
 
-        /**
-         * 设置下拉刷新回调
-         */
-        swipeRefreshLayout
-                .setOnPullRefreshListener(new SuperSwipeRefreshLayout.OnPullRefreshListener() {
 
-                    @Override
-                    public void onRefresh(boolean isbackHome) {
-
-                        if (isbackHome) {
-                            swipeRefreshLayout.setRefreshing(false);
-                            upPanelLayout.collapsePane();
-                            return;
-                        }
-
-                        //TODO:刷新数据
-                        new Handler().postDelayed(new Runnable() {
-
-                            @Override
-                            public void run() {
-                                swipeRefreshLayout.setRefreshing(false);
-                            }
-                        }, 2000);
-                    }
-
-                });
+        /** 响应返回主页*/
+        Engine.getInstance().viewBackSignal.addListener(new SignalListener() {
+            @Override
+            public void execute(Signal signal, Message msg) {
+                isbackhome = true;
+                channel.setVisibility(View.GONE);
+                upPanelLayout.collapsePane();
+            }
+        }, 0);
 
 
     }
@@ -172,9 +199,14 @@ public class MainNewsVu implements Vu {
     @Override
     public void onStartView() {
 
-        int upslideHeigh = Engine.getInstance().systemManager.getWindowHeightOfPix() - 224;
+        int upslideHeigh = Engine.getInstance().systemManager.getWindowHeightOfPix() - main_content_layout.getMeasuredHeight();
+
+        LogUtil.logDebug(TAG,"upSlideHeight："+upslideHeigh);
 
         upPanelLayout.setPanelHeight(1200);
+
+        addChannelBar();
+        initFragment();
 
     }
 
@@ -206,15 +238,18 @@ public class MainNewsVu implements Vu {
         return view;
     }
 
-    public void setListAdapter(BaseAdapter adapter) {
-        lstView.setAdapter(adapter);
-    }
 
     public void initSlidingMenu(SlidingMenu sidedrawer) {
         this.side_drawer = sidedrawer;
     }
 
     public void initActionBar() {
+
+    }
+
+    public  void  setFragmentAdapter(NewsFragmentPagerAdapter fragmentPagerAdapter){
+
+        this.pagerAdpter = fragmentPagerAdapter;
 
     }
 

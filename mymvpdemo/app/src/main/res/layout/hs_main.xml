@@ -1,59 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
 
-
-    <com.nfyg.hswx.views.widget.SlidingUpPanelLayout
-        android:id="@+id/sliding_layout"
+    <LinearLayout
+        android:id="@+id/main_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:orientation="vertical">
 
-        <!-- MAIN CONTENT -->
-        <LinearLayout
-            android:id="@+id/main_content_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#ffffff"
-            android:orientation="vertical">
-
-            <include layout="@layout/main_head"></include>
-
-            <com.nfyg.hswx.views.widget.ImageCycleView
-
-                android:id="@+id/main_banner_iamgecycleview"
-                android:layout_width="fill_parent"
-                android:layout_height="180dp">
-
-            </com.nfyg.hswx.views.widget.ImageCycleView>
-        </LinearLayout>
-
-
-        <!-- SLIDING LAYOUT -->
-        <LinearLayout
+        <com.nfyg.hswx.views.widget.SlidingUpPanelLayout
+            android:id="@+id/sliding_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#ffffff"
-            android:clickable="true"
-            android:orientation="vertical">
+            android:background="@color/transparent">
 
 
-
-            <com.nfyg.hswx.views.widget.SuperSwipeRefreshLayout
-                android:id="@+id/swipe_refresh"
+            <!-- MAIN CONTENT -->
+            <LinearLayout
+                android:id="@+id/main_content_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="vertical">
 
-            <ListView
-                android:id="@+id/list"
+                <include layout="@layout/main_head"></include>
+
+                <com.nfyg.hswx.views.widget.ImageCycleView
+
+                    android:id="@+id/main_banner_iamgecycleview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="180dp">
+
+                </com.nfyg.hswx.views.widget.ImageCycleView>
+            </LinearLayout>
+
+            <!-- SLIDING LAYOUT -->
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"></ListView>
+                android:layout_height="match_parent"
+                android:background="#00000000"
+                android:clickable="true"
+                android:orientation="vertical">
 
-            </com.nfyg.hswx.views.widget.SuperSwipeRefreshLayout>
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/mian_viewpager"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
 
-        </LinearLayout>
-    </com.nfyg.hswx.views.widget.SlidingUpPanelLayout>
+                    </android.support.v4.view.ViewPager>
 
+
+                   <!-- <com.nfyg.hswx.views.widget.SwipeRefreshLayout
+                        android:id="@+id/swipe_refresh"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff">
+
+                        <ListView
+                            android:id="@+id/list"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"></ListView>
+
+                    </com.nfyg.hswx.views.widget.SwipeRefreshLayout>-->
+
+
+            </LinearLayout>
+        </com.nfyg.hswx.views.widget.SlidingUpPanelLayout>
+
+
+    </LinearLayout>
 
 </RelativeLayout>

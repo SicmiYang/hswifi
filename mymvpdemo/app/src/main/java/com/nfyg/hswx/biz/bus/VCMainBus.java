@@ -1,19 +1,26 @@
 package com.nfyg.hswx.biz.bus;
 
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+
 import com.nfyg.hswx.Engine;
 import com.nfyg.hswx.EngineOptions;
 import com.nfyg.hswx.biz.BaseBus;
 import com.nfyg.hswx.biz.signals.Signal;
 import com.nfyg.hswx.data.Constants;
+import com.nfyg.hswx.model.entity.ChannelItem;
+import com.nfyg.hswx.model.entity.ChannelManage;
 import com.nfyg.hswx.model.entity.NewsEntity;
 import com.nfyg.hswx.utils.BundleBuilder;
 import com.nfyg.hswx.utils.common.LogUtil;
 import com.nfyg.hswx.utils.httpUtils.JsonBuilder;
+import com.nfyg.hswx.views.fragment.RecommendedFragment;
 import com.nfyg.hswx.web.request.RefreshUserRequest;
 import com.nfyg.hswx.web.response.model.ResponseRefreshUserData;
 import com.nfyg.hswx.web.rplistener.OnResponseListener3;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -27,6 +34,8 @@ public class VCMainBus extends BaseBus {
     public  ArrayList<NewsEntity> news ;
 
     public ArrayList<String> adList = new ArrayList<>();
+
+    public ArrayList<Fragment> fragments = new ArrayList<Fragment>();
 
     public VCMainBus()
     {
@@ -98,7 +107,29 @@ public class VCMainBus extends BaseBus {
             adList.add("http://imgt2.bdstatic.com/it/u=3269155243,2604389213&fm=21&gp=0.jpg");
             adList.add("https://www.baidu.com/img/bd_logo1.png");
         }
+
+        initListFragments();
     }
+
+    /**
+     *初始化Fragments
+     */
+    public void initListFragments(){
+        List<ChannelItem> userChannelList = ChannelManage.defaultUserChannels;
+
+        for(int i = 0; i< userChannelList.size();i++){
+            Bundle data = new Bundle();
+            data.putString("text", userChannelList.get(i).getName());
+            data.putInt("id", userChannelList.get(i).getId());
+            RecommendedFragment newfragment = new RecommendedFragment();
+            newfragment.setArguments(data);
+            fragments.add(newfragment);
+
+        }
+    }
+
+
+
 
     @Override
     public void reset(Map<String, Object> params) {
@@ -127,6 +158,10 @@ public class VCMainBus extends BaseBus {
         if(adList!=null){
             adList.clear();
         }
+
+        if(fragments!=null){
+            fragments.clear();
+        }
     }
 
     @Override
@@ -142,6 +177,9 @@ public class VCMainBus extends BaseBus {
         }
         if(adList !=null){
             adList = null;
+        }
+        if (fragments !=null){
+            fragments = null;
         }
     }
 

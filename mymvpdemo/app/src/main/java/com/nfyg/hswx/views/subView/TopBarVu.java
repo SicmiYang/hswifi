@@ -11,6 +11,7 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.nfyg.hswx.R;
 import com.nfyg.hswx.Engine;
 import com.nfyg.hswx.views.Vu;
+import com.nfyg.hswx.views.widget.DrawerView;
 
 /**
  * Created by shengming.yang on 2015/11/20.

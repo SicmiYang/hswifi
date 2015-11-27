@@ -1,8 +1,8 @@
 package com.nfyg.hswx;
 
-import android.app.Activity;
 import android.app.FragmentManager;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
 import com.nfyg.hswx.views.Vu;
 
@@ -11,7 +11,7 @@ import de.greenrobot.event.EventBus;
 /**
  * Created by shengming.yang on 2015/11/13.
  */
-public abstract class BasePresentActivity<V extends Vu> extends Activity {
+public abstract class BasePresentActivity<V extends Vu> extends FragmentActivity {
 
     protected FragmentManager fm;
     protected V vu;

@@ -27,6 +27,7 @@ import com.nfyg.hswx.views.Vu;
 import com.nfyg.hswx.views.VuCallBack;
 import com.nfyg.hswx.views.adapter.NewListAdapter;
 import com.nfyg.hswx.views.widget.ColumnHorizontalScrollView;
+import com.nfyg.hswx.views.widget.DrawerView;
 
 import java.util.List;
 

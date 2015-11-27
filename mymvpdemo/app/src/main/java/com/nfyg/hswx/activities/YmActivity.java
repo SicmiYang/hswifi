@@ -6,10 +6,11 @@ import com.nfyg.hswx.AppConfig;
 import com.nfyg.hswx.BasePresentActivity;
 import com.nfyg.hswx.Engine;
 import com.nfyg.hswx.biz.bus.VCMainBus;
+import com.nfyg.hswx.biz.bus.VCViewEventBus;
 import com.nfyg.hswx.events.MainEvent;
-import com.nfyg.hswx.views.adapter.NewListAdapter;
-import com.nfyg.hswx.views.subView.DrawerView;
+import com.nfyg.hswx.views.fragment.adapter.NewsFragmentPagerAdapter;
 import com.nfyg.hswx.views.subView.MainNewsVu;
+import com.nfyg.hswx.views.widget.DrawerView;
 
 /**
  * Created by shengming.yang on 2015/11/13.
@@ -22,17 +23,23 @@ public class YmActivity extends BasePresentActivity<MainNewsVu>   {
     protected void onBindVu() {
 
         Engine.getInstance().initEngine(YmActivity.this, new AppConfig());
-        Engine.busManager.addBus(VCMainBus.class.getSimpleName(), new VCMainBus());
+        initBus();
         Engine.getInstance().init(null);
         super.onBindVu();
 //        fm.beginTransaction()
 //                .replace(vu.getContainerId(), NewsListFragment.newInstance())
 //                .commit();
-        vu.setListAdapter(new NewListAdapter(VCMainBus.getInstanceBus().news));
+//        vu.setListAdapter(new NewListAdapter(VCMainBus.getInstanceBus().news));
 
+        vu.setFragmentAdapter(new NewsFragmentPagerAdapter(getSupportFragmentManager(), VCMainBus.getInstanceBus().fragments));
         vu.initSlidingMenu(new DrawerView(YmActivity.this).initSlidingMenu());
 
 
+    }
+
+    private void initBus() {
+        Engine.busManager.addBus(VCMainBus.class.getSimpleName(), new VCMainBus());
+        Engine.busManager.addBus(VCViewEventBus.class.getSimpleName(), new VCViewEventBus());
     }
 
     @Override
