@@ -2,7 +2,7 @@
     xmlns:myapp="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/left_drawer_item_bg_normal"
+    android:background="@color/report_btn_bg_normal"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -48,6 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.0"
         android:gravity="center_horizontal"
+        android:background="@color/primary"
         android:orientation="vertical" >
 
         <LinearLayout
@@ -69,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="13.0dip"
-            android:text="@string/left_drawer_no_login_tip"
+            android:text="花生无线 3.0"
             android:textColor="@color/left_drawer_no_login_tip_text"
             android:textSize="11.0sp" />
     </LinearLayout>
@@ -100,11 +101,11 @@
             <ImageView style="@style/left_drawer_item_line" />
 
 
-            <ImageView style="@style/left_drawer_item_line" />
 
             <RelativeLayout
                 android:id="@+id/favorite_btn"
-                style="@style/left_drawer_item_layout" >
+                style="@style/left_drawer_item_layout"
+                >
 
                 <TextView
                     style="@style/left_drawer_item_text"

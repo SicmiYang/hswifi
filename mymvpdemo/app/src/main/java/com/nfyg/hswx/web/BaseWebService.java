@@ -43,11 +43,14 @@ public class BaseWebService {
     private Context context;
     private boolean shouldRetry = true;
 
+    private BitmapCache mBitmapCache;
+
     private static DefaultRetryPolicy defaultRetryPolicy = new DefaultRetryPolicy(5000, 2, 1f);
     private static DefaultRetryPolicy noRetryPolicy = new DefaultRetryPolicy(5000, 0, 1f);
 
     public BaseWebService(Context context) {
         requestQueue = Volley.newRequestQueue(context);
+        mBitmapCache = new BitmapCache();
         this.context = context;
     }
 
@@ -59,7 +62,7 @@ public class BaseWebService {
         shouldRetry = true;
     }
 
-    private void jsonPostRequest(String url, JSONObject jsonObject, Response.Listener<JSONObject>
+    public void jsonPostRequest(String url, JSONObject jsonObject, Response.Listener<JSONObject>
             listener, Response.ErrorListener errorListener) {
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, jsonObject,
                 listener, errorListener);
@@ -73,7 +76,7 @@ public class BaseWebService {
         resetRetrySetting();
     }
 
-    private void jsonGetRequest(String url, Response.Listener<JSONObject> listener,
+    public void jsonGetRequest(String url, Response.Listener<JSONObject> listener,
                                   Response.ErrorListener errorListener) {
         JsonObjectRequest request = new JsonObjectRequest(url, null, listener, errorListener);
         request.setShouldCache(false);
@@ -249,7 +252,29 @@ public class BaseWebService {
         );
     }
 
+
     public <T> void jsonWebPost2(String api, HashMap<String, String> params, final JsonResponseParser2<T> jsonResponseParser, final OnResponseListener2<T> listener) {
+        jsonWebRequest2(api, params,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            listener.onResponse(jsonResponseParser.parse(response));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            listener.onError("JSONException");
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        listener.onError(volleyError.getMessage());
+                    }
+                }
+        );
+    }
+    public <T> void jsonWebPost3(String api, HashMap<String, String> params, final JsonResponseParser2<T> jsonResponseParser, final OnResponseListener2<T> listener) {
         jsonWebRequest2(api, params,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -394,11 +419,12 @@ public class BaseWebService {
     }
 
     public void displayImg(ImageView imageView,String imageUrl){
-        ImageLoader imageLoader = new ImageLoader(requestQueue, new BitmapCache());
-        ImageLoader.ImageListener listener = ImageLoader.getImageListener(imageView,R.drawable.ic_full_image_failed, R.drawable.ic_full_image_failed);
 
+        ImageLoader imageLoader = new ImageLoader(requestQueue, mBitmapCache);
+        ImageLoader.ImageListener listener = ImageLoader.getImageListener(imageView,R.drawable.ic_full_image_failed, R.drawable.ic_launcher);
         imageLoader.get(imageUrl, listener);
         //指定图片允许的最大宽度和高度
-        //imageLoader.get("http://developer.android.com/images/home/aw_dac.png",listener, 200, 200);
+        //imageLoader.get(imageUrl,listener, 200, 200);
     }
+
 }

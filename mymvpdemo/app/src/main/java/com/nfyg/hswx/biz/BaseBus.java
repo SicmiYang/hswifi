@@ -3,8 +3,10 @@ package com.nfyg.hswx.biz;
 
 import android.os.Bundle;
 
+import com.nfyg.hswx.biz.manager.SystemManager;
 import com.nfyg.hswx.biz.signals.Signal;
 import com.nfyg.hswx.fwinterface.IBus;
+import com.nfyg.hswx.web.BaseWebService;
 
 import java.util.Map;
 
@@ -13,6 +15,8 @@ public abstract class BaseBus implements IBus
 {
 
     public boolean isBusOk = false;
+
+    public BaseWebService service;
 
     public BaseBus()
     {
@@ -58,6 +62,7 @@ public abstract class BaseBus implements IBus
     @Override
     public void preInit(Map<String, Object> params)
     {
+        this.service = SystemManager.getBaseWebService();
     }
 
     @Override

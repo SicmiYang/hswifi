@@ -87,7 +87,7 @@
     <dimen name="essay_image_item_total_padding">32.0dip</dimen>
     <dimen name="splash_avatar_size">68.0dip</dimen>
     <dimen name="splash_avatar_corner">34.0dip</dimen>
-    <dimen name="slidingmenu_offset">150.0dip</dimen>
+    <dimen name="slidingmenu_offset">90.0dip</dimen>
     <dimen name="shadow_width">15.0dip</dimen>
     <dimen name="category_icon">30.0dip</dimen>
     <dimen name="favor_user_avatar_size">30.0dip</dimen>

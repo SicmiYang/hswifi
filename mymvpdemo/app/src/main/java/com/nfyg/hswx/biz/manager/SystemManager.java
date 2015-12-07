@@ -544,6 +544,9 @@ public class SystemManager extends BaseManager
         this.activityManager = null;
         this.connectivityManager = null;
         this.locationManager = null;
+        if(webService!=null){
+            webService = null;
+        }
 
     }
 
@@ -710,11 +713,25 @@ public class SystemManager extends BaseManager
     }
 
 
+    /**
+     * 获取web service
+     * @return
+     */
     public static BaseWebService getBaseWebService() {
         if (webService == null) {
             webService = new BaseWebService(Engine.application);
         }
         return webService;
+    }
+
+    /**
+     * 视频缓存目录
+     * @return
+     */
+    public static String getBufferDir(){
+        String bufferDir = Environment.getExternalStorageDirectory()
+                .getAbsolutePath() + "/ProxyBuffer/files";
+        return bufferDir;
     }
 
 

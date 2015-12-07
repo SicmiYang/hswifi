@@ -1,8 +1,11 @@
 package com.nfyg.hswx.views;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.nfyg.hswx.utils.common.LogUtil;
 
 /**
  * Created by shengming.yang on 2015/11/27.
@@ -10,8 +13,7 @@ import android.view.ViewGroup;
 public abstract class YmVu implements Vu{
 
     @Override
-    public void init(LayoutInflater inflater, ViewGroup rootView) {
-    }
+    public abstract void init(LayoutInflater inflater, ViewGroup rootView);
 
     @Override
     public void initListener() {
@@ -44,8 +46,12 @@ public abstract class YmVu implements Vu{
     }
 
     @Override
-    public View getView() {
-        return null;
+    public abstract View getView();
+
+
+    private static final void logD(String msg) {
+        if (!TextUtils.isEmpty(msg))
+            LogUtil.logDebug("YmVu", msg);
     }
 
 }

@@ -8,20 +8,17 @@ import android.view.ViewGroup;
 
 import com.nfyg.hswx.views.Vu;
 
-import de.greenrobot.event.EventBus;
-
 /**
  * Created by shengming.yang on 2015/11/16.
  */
 public abstract class BasePresenterFragment<V extends Vu>  extends Fragment {
 
     protected V vu;
-    protected EventBus bus;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bus = EventBus.getDefault();
+
     }
 
     @Override

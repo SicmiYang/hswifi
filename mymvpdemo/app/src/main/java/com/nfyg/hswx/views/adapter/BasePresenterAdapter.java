@@ -16,8 +16,10 @@ public abstract class BasePresenterAdapter<V extends Vu> extends BaseAdapter {
 
     protected V vu;
 
+
     @Override
-    public final View getView(int position, View convertView, ViewGroup parent) {
+    public  View getView(int position, View convertView, ViewGroup parent) {
+
         if(convertView == null) {
 
             LayoutInflater inflater = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);

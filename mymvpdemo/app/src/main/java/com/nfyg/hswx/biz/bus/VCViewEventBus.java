@@ -1,8 +1,10 @@
 package com.nfyg.hswx.biz.bus;
 
 import com.nfyg.hswx.Engine;
+import com.nfyg.hswx.EngineOptions;
 import com.nfyg.hswx.biz.BaseBus;
 import com.nfyg.hswx.biz.signals.Signal;
+import com.nfyg.hswx.utils.BundleBuilder;
 
 import java.util.Map;
 
@@ -31,7 +33,8 @@ public class VCViewEventBus extends BaseBus{
      */
     public void callUpswipeLayoutDown(){
 
-        callBack(Engine.getInstance().viewBackSignal,null);
+        callBack(Engine.getInstance().viewBackSignal,
+                BundleBuilder.build().append(EngineOptions.flag_flag,EngineOptions.flag_back_home).commit());
 
     };
 

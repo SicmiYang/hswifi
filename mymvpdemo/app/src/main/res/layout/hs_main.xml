@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/transparent">
+    >
+
+
 
     <RelativeLayout
         android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
         android:clickable="true"
         android:orientation="vertical">
 
@@ -16,7 +20,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/transparent">
-
 
             <!-- MAIN CONTENT -->
             <LinearLayout
@@ -27,6 +30,45 @@
                 android:orientation="vertical">
 
                 <include layout="@layout/main_head"></include>
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="34dip"
+                    android:layout_margin="@dimen/widget_margin"
+                    android:paddingLeft="10.0dip"
+                    android:hint="输入网址或搜索内容"
+                    android:background="@drawable/hs_main_search_bg"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="@dimen/widget_margin">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_drawer_weibo"
+                        android:layout_weight="1.0"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_drawer_qzone"
+                        android:layout_weight="1.0"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_drawer_tencent"
+                        android:layout_weight="1.0"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_drawer_qzone"
+                        android:layout_weight="1.0"/>
+
+                </LinearLayout>
 
                 <com.nfyg.hswx.views.widget.ImageCycleView
 
@@ -51,7 +93,6 @@
                     android:visibility="gone"
                     />
 
-
                     <android.support.v4.view.ViewPager
                         android:id="@+id/mian_viewpager"
                         android:layout_width="match_parent"
@@ -63,7 +104,8 @@
             </LinearLayout>
         </com.nfyg.hswx.views.widget.SlidingUpPanelLayout>
 
-
     </RelativeLayout>
+    
 
-</RelativeLayout>
+
+</FrameLayout>

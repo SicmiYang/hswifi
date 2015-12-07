@@ -486,7 +486,6 @@
     <string name="unknow_error_verify_code">验证码传输受不明原因拦截稍后再试吧</string>
 
 
-    <string name="left_drawer_no_login_tip">登录后，将推荐给你更多感兴趣的文章</string>
     <string name="left_drawer_item_search">搜索</string>
     <string name="left_drawer_item_favorite">收藏</string>
     <string name="left_drawer_item_message">消息</string>

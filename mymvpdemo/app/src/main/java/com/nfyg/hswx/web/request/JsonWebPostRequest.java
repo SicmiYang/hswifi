@@ -6,8 +6,8 @@ import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.toolbox.HttpHeaderParser;
-import com.nfyg.hswx.utils.common.MD5Utils;
 import com.nfyg.hswx.utils.common.ConstUtil;
+import com.nfyg.hswx.utils.common.MD5Utils;
 
 import org.json.JSONException;
 import org.json.JSONObject;

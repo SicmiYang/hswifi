@@ -11,10 +11,20 @@ import com.nfyg.hswx.views.subView.NewsListVu;
  */
 public class RecommendedFragment extends BasePresenterFragment<NewsListVu> {
 
+    private NewListAdapter adapter;
     @Override
     protected void onBindVu() {
         super.onBindVu();
-        vu.setAdapter(new NewListAdapter(VCMainBus.getInstanceBus().news));
+
+        adapter = new NewListAdapter(VCMainBus.getInstanceBus().test_news);
+        vu.setAdapter(adapter);
+
+        initListener();
+    }
+
+
+    private void   initListener() {
+
     }
 
     @Override

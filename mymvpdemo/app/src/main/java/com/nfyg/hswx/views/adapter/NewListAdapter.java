@@ -1,6 +1,9 @@
 package com.nfyg.hswx.views.adapter;
 
-import com.nfyg.hswx.model.entity.NewsEntity;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.nfyg.hswx.model.entity.TestNewsEntiy;
 import com.nfyg.hswx.views.adapter.itemView.NewsListItemVu;
 
 import java.util.List;
@@ -10,18 +13,19 @@ import java.util.List;
  */
 public  class NewListAdapter extends BasePresenterAdapter<NewsListItemVu> {
 
-   List<NewsEntity> news ;
+   List<TestNewsEntiy> news ;
 
 
     private NewListAdapter(){};
 
-    public NewListAdapter(List<NewsEntity> resoures){
+    public NewListAdapter(List<TestNewsEntiy> resoures){
         super();
         news = resoures;
     }
 
     @Override
     protected void onBindListItemVu(int position) {
+       
         vu.setViewData(news.get(position));
     }
     @Override
@@ -53,6 +57,11 @@ public  class NewListAdapter extends BasePresenterAdapter<NewsListItemVu> {
 
     @Override
     public int getItemViewType(int position) {
-        return news.get(position).getTypeCode();
+        return -1;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        return super.getView(position, convertView, parent);
     }
 }

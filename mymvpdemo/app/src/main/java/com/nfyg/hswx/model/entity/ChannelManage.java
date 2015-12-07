@@ -21,7 +21,7 @@ public class ChannelManage {
 		defaultUserChannels.add(new ChannelItem(1, "推荐", 1, 1));
 		defaultUserChannels.add(new ChannelItem(2, "热点", 2, 1));
 		defaultUserChannels.add(new ChannelItem(3, "上海", 3, 1));
-		defaultUserChannels.add(new ChannelItem(4, "时尚", 4, 1));
+		defaultUserChannels.add(new ChannelItem(4, "视频", 4, 1));
 		defaultUserChannels.add(new ChannelItem(5, "科技", 5, 1));
 		defaultUserChannels.add(new ChannelItem(6, "体育", 6, 1));
 		defaultUserChannels.add(new ChannelItem(7, "军事", 7, 1));

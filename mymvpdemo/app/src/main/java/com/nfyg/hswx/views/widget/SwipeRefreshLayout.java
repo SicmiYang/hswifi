@@ -39,6 +39,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 
+import com.nfyg.hswx.Engine;
 import com.nfyg.hswx.R;
 import com.nfyg.hswx.utils.common.LogUtil;
 
@@ -54,7 +55,7 @@ public class SwipeRefreshLayout extends ViewGroup {
     private static final int INVALID_POINTER = -1;
     private static final float DRAG_RATE = .5f;
 
-    private static final float BACK_HOME_DISTANCE = 350;//swipe back home min distance
+    private static final float BACK_HOME_DISTANCE = (float) (Engine.getInstance().systemManager.getWindowHeightOfPix()/5.5);//swipe back home min distance
 
     private static final int SCALE_DOWN_DURATION = 150;
     private static final int ANIMATE_TO_TRIGGER_DURATION = 200;
@@ -117,7 +118,7 @@ public class SwipeRefreshLayout extends ViewGroup {
 
     private boolean mUsingCustomStart;
 
-    private boolean targetScrollWithLayout = true;
+    private boolean targetScrollWithLayout = false;
 
     private int pushDistance = 0;
 

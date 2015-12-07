@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="240dp"
+            android:orientation="vertical"
+            android:descendantFocusability="blocksDescendants"
+            android:background="#000000" >
+            <VideoView
+                android:id="@+id/news_item_video_view"
+                android:layout_width="fill_parent"
+                android:layout_height="240dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                />
+            <ImageView
+                android:id="@+id/video_image"
+                android:layout_width="fill_parent"
+                android:layout_height="240dp"
+                android:contentDescription="this is an image about the movie"
+                android:scaleType="centerCrop"
+                />
+            <ProgressBar
+                android:id="@+id/news_item_video_progressbar"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                />
+            <TextView
+                android:id="@+id/news_item_video_title_txt"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:layout_margin="@dimen/widget_margin"
+                />
+            <ImageButton
+                android:id="@+id/news_item_play_img_view"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_play_video"
+                android:contentDescription="this is a button and play a video"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/splash_avatar_corner"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="@dimen/widget_margin">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="赞"
+                android:layout_weight="1.0"
+                style="@style/Base.TextAppearance.AppCompat"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="踩"
+                android:layout_weight="1.0"
+                style="@style/Base.TextAppearance.AppCompat"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="评论"
+                android:layout_weight="1.0"
+                style="@style/Base.TextAppearance.AppCompat"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="全屏"
+                android:layout_weight="1.0"
+                android:gravity="right"
+                style="@style/Base.TextAppearance.AppCompat"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

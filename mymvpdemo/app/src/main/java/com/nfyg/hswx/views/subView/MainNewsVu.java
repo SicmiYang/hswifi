@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.nfyg.hswx.Engine;
+import com.nfyg.hswx.EngineOptions;
 import com.nfyg.hswx.R;
 import com.nfyg.hswx.biz.bus.VCMainBus;
 import com.nfyg.hswx.biz.manager.SystemManager;
@@ -33,10 +34,9 @@ public class MainNewsVu  implements Vu {
 
     private View view;
 
-//    private ListView lstView;
+    public boolean isPanelSlideExpanded = false;
 
     private ImageCycleView imageCycleView;
-
     private ImageView top_head;
     private ImageView top_more;
     private ImageView top_refresh;
@@ -45,7 +45,6 @@ public class MainNewsVu  implements Vu {
     private SlidingUpPanelLayout upPanelLayout;
 
     private LinearLayout main_content_layout;
-//    private SwipeRefreshLayout swipeRefreshLayout;
 
     private  View channel;
     private RelativeLayout main_layout;
@@ -70,8 +69,10 @@ public class MainNewsVu  implements Vu {
         this.main_content_layout = (LinearLayout) view.findViewById(R.id.main_content_layout);
         this.main_layout = (RelativeLayout) view.findViewById(R.id.main_layout);
         this.vpager = (ViewPager)view.findViewById(R.id.mian_viewpager);
-
         this.tempView = (View)view.findViewById(R.id.tempView);
+
+
+
     }
 
     /**
@@ -132,7 +133,7 @@ public class MainNewsVu  implements Vu {
             @Override
             public void displayImage(String imageURL, ImageView imageView) {
 
-                SystemManager.getBaseWebService().displayImg(imageView, imageURL);
+               SystemManager.getBaseWebService().displayImg(imageView, imageURL);
             }
 
             @Override
@@ -169,11 +170,13 @@ public class MainNewsVu  implements Vu {
             @Override
             public void onPanelCollapsed(View panel) {
                 isbackhome = false;
+                isPanelSlideExpanded = false;
                 LogUtil.logDebug("SlidingUpPanelLayout", "onPanelCollapsed");
             }
 
             @Override
             public void onPanelExpanded(View panel) {
+                isPanelSlideExpanded = true;
                 LogUtil.logDebug("SlidingUpPanelLayout", "onPanelExpanded");
             }
 
@@ -185,9 +188,12 @@ public class MainNewsVu  implements Vu {
         Engine.getInstance().viewBackSignal.addListener(new SignalListener() {
             @Override
             public void execute(Signal signal, Message msg) {
-                isbackhome = true;
-                tempView.setVisibility(View.GONE);
-                upPanelLayout.collapsePane();
+                if (msg.getData().getString(EngineOptions.flag_flag).equals(EngineOptions.flag_back_home)){
+
+                    isbackhome = true;
+                    tempView.setVisibility(View.GONE);
+                    upPanelLayout.collapsePane();
+                }
             }
         }, 0);
 
@@ -201,7 +207,7 @@ public class MainNewsVu  implements Vu {
 
         LogUtil.logDebug(TAG,"upSlideHeight："+upslideHeigh);
 
-        upPanelLayout.setPanelHeight(1200);
+        upPanelLayout.setPanelHeight((Engine.getInstance().systemManager.getWindowHeightOfPix()/2)-(Engine.getInstance().systemManager.getWindowHeightOfPix()/16));
 
         addChannelBar();
         initFragment();
@@ -212,6 +218,7 @@ public class MainNewsVu  implements Vu {
     public void onResumeView() {
 
         this.imageCycleView.startImageCycle();
+
     }
 
     @Override

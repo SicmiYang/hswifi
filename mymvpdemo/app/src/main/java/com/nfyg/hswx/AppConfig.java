@@ -26,6 +26,10 @@ public class AppConfig extends EngineOptions
 
         this.isTest = false;
 
+        this.http_url = "http://192.168.1.80/v1/channel/hot";
+
+        this.host = "http://192.168.1.80";
+
     }
 
 }

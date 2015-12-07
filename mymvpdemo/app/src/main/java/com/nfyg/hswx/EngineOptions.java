@@ -13,6 +13,16 @@ public class EngineOptions
 
     static public final float nanoToMSec = 1 / 1000000f;
 
+    /**
+     * HttpProxy 相关
+     */
+    final static public String LOCAL_IP_ADDRESS = "127.0.0.1";
+    final static public int HTTP_PORT = 80;
+    final static public String HTTP_BODY_END = "\r\n\r\n";
+    final static public String HTTP_RESPONSE_BEGIN = "HTTP/1.1 ";
+    final static public String HTTP_REQUEST_BEGIN = "GET ";
+    final static public String HTTP_REQUEST_LINE1_END = " HTTP/";
+
     public static final int choose_photo_one = 1;
 
     public static final int choose_photo_lst = 2;
@@ -246,7 +256,11 @@ public class EngineOptions
     public static final int server_code_jsonError = 1006;
 
     // 标示相关
+    public final static String flag_notify_adapter = "notifyAdapter";
+
     public final static String back_data_flag = "backDataFlag";
+
+    public final static String flag_back_home = "backHome";
 
     public final static String listData = "listData";
 
@@ -424,4 +438,9 @@ public class EngineOptions
      * 测试upload地址
      */
     public String test_upload_url;
+
+    /**
+     * 主机地址
+     */
+    public String host;
 }

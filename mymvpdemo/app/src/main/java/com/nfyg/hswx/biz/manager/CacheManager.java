@@ -17,7 +17,7 @@ import java.util.Map;
 public class CacheManager<T> extends BaseManager {
 
     private String TAG = this.getClass().getSimpleName();
-    private ACache aCache;
+    public ACache aCache;
 
     private final static int CACHE_TIME_FOREVER = Integer.MAX_VALUE;
 
@@ -62,6 +62,12 @@ public class CacheManager<T> extends BaseManager {
     @Override
     public void preInit(Map<String, Object> params) {
 
+
+    }
+
+    @Override
+    public void init(Map<String, Object> params) {
+        super.init(params);
         aCache = ACache.get(Engine.application);
     }
 

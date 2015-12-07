@@ -6,10 +6,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nfyg.hswx.Engine;
 import com.nfyg.hswx.R;
 import com.nfyg.hswx.biz.manager.SystemManager;
-import com.nfyg.hswx.model.entity.NewsEntity;
-import com.nfyg.hswx.utils.common.DateTools;
+import com.nfyg.hswx.model.entity.TestNewsEntiy;
 import com.nfyg.hswx.views.Vu;
 
 /**
@@ -54,36 +54,38 @@ public class NewsListItemVu implements Vu {
 
         switch (ITEM_TYPE_CODE){
             case ITEM_TYPE_INVALID:
+                view = minflater.inflate(R.layout.news_main_list_item_right_res_ly,mrootView,false);
+                fillrightResHolder(rightResMessageHolder);
                 break;
             case ITEM_TYPE_ONLY_TEXT:
-                view = minflater.inflate(R.layout.news_list_item_single_txt_ly,mrootView,false);
+                view = minflater.inflate(R.layout.news_main_list_item_single_txt_ly,mrootView,false);
                 fillTextMessageHolder(textMessageHolder);
                 break;
             case ITEM_TYPE_SINGLE_IMAGE:
-                view =  minflater.inflate(R.layout.news_list_item_large_iamge_ly, mrootView, false);
+                view =  minflater.inflate(R.layout.news_main_list_item_large_iamge_ly, mrootView, false);
                 filllagerImgHolder(largeImgMessageHolder);
                 break;
             case ITEM_TYPE_RIGHT_IMAGE:
-                view = minflater.inflate(R.layout.news_list_item_right_res_ly,mrootView,false);
+                view = minflater.inflate(R.layout.news_main_list_item_right_res_ly,mrootView,false);
                 fillrightResHolder(rightResMessageHolder);
                 break;
             case ITEM_TYPE_LEFT_IMAGE:
                 //TODO: need use left view type
-                view = minflater.inflate(R.layout.news_list_item_right_res_ly,mrootView,false);
+                view = minflater.inflate(R.layout.news_main_list_item_right_res_ly,mrootView,false);
                 fillrightResHolder(rightResMessageHolder);
                 break;
             case ITEM_TYPE_MULTI_IMAGE:
-                view = minflater.inflate(R.layout.news_list_item_multi_image_ly,mrootView,false);
+                view = minflater.inflate(R.layout.news_main_list_item_multi_image_ly,mrootView,false);
                 fillmultiImgHolder(multiImgMessageHolder);
                 break;
             case ITEM_TYPE_SINGLE_AUDIO:
                 //TODO: need use audio view type
-                view = minflater.inflate(R.layout.news_list_item_large_iamge_ly,mrootView,false);
+                view = minflater.inflate(R.layout.news_main_list_item_large_iamge_ly,mrootView,false);
                 filllagerImgHolder(largeImgMessageHolder);
                 break;
 
             case ITEM_TYPE_RIGHT_AUDIO:
-                view = minflater.inflate(R.layout.news_list_item_right_res_ly,mrootView,false);
+                view = minflater.inflate(R.layout.news_main_list_item_right_res_ly,mrootView,false);
                 fillrightResHolder(rightResMessageHolder);
                 break;
         }
@@ -144,10 +146,11 @@ public class NewsListItemVu implements Vu {
         return view;
     }
     
-    public  void  setViewData(NewsEntity news){
+    public  void  setViewData(TestNewsEntiy news){
 
         switch (ITEM_TYPE_CODE){
             case ITEM_TYPE_INVALID:
+                hanlderRightRes(rightResMessageHolder,news);
                 break;
             case ITEM_TYPE_ONLY_TEXT:
                 hanlderSingleTxt(textMessageHolder,news);
@@ -171,6 +174,10 @@ public class NewsListItemVu implements Vu {
                 break;
 
             case ITEM_TYPE_RIGHT_AUDIO:
+                hanlderRightRes(rightResMessageHolder, news);
+                break;
+
+            default:
                 hanlderRightRes(rightResMessageHolder, news);
                 break;
         }
@@ -245,26 +252,26 @@ public class NewsListItemVu implements Vu {
     }
 
 
-    private void hanlderBaseMessage(BaseViewHolder holder,NewsEntity news){
+    private void hanlderBaseMessage(BaseViewHolder holder,TestNewsEntiy news){
 
 //        if (news.getComment()!=null){
 //            holder.comment_content.setText(news.getComment());
 //        }
-        holder.comment_count.setText("评论："+news.getCommentNum());
-        holder.item_source.setText(news.getSource());
-        holder.item_title.setText(news.getTitle());
-        holder.publish_time.setText(DateTools.getStrTime_hm(news.getPublishTime()+""));
+//        holder.comment_count.setText("评论："+news.getCommentNum());
+//        holder.item_source.setText(news.);
+        holder.item_title.setText(news.title);
+        holder.publish_time.setText(news.date);
 
     }
 
 
-    private  void hanlderSingleTxt(BaseViewHolder.TextMessageHolder holder,NewsEntity news){
+    private  void hanlderSingleTxt(BaseViewHolder.TextMessageHolder holder,TestNewsEntiy news){
         hanlderBaseMessage(holder, news);
-        holder.msg.setText(news.getTitle());
+        holder.msg.setText(news.title);
 
     }
 
-    private void hanlderMultiImg(BaseViewHolder.MultiImgMessageHolder holder ,NewsEntity news){
+    private void hanlderMultiImg(BaseViewHolder.MultiImgMessageHolder holder ,TestNewsEntiy news){
         hanlderBaseMessage(holder, news);
 //        SystemManager.getBaseWebService().displayImg(holder.rightImg, news.getPicOne());
 //        SystemManager.getBaseWebService().displayImg(holder.middleImg,news.getPicOne());
@@ -272,14 +279,18 @@ public class NewsListItemVu implements Vu {
 
     }
 
-    private void hanlderLargeImg(BaseViewHolder.LargeImgMessageHolder holder ,NewsEntity news){
+    private void hanlderLargeImg(BaseViewHolder.LargeImgMessageHolder holder ,TestNewsEntiy news){
         hanlderBaseMessage(holder, news);
-        SystemManager.getBaseWebService().displayImg(holder.laegeImg, news.getPicOne());
+        //SystemManager.getBaseWebService().displayImg(holder.laegeImg, news.getPicOne());
     }
 
-    private void hanlderRightRes(BaseViewHolder.RightResMessageHolder holder ,NewsEntity news){
+    private void hanlderRightRes(BaseViewHolder.RightResMessageHolder holder ,TestNewsEntiy news){
         hanlderBaseMessage(holder, news);
-        SystemManager.getBaseWebService().displayImg(holder.rightImg, news.getPicOne());
+
+        if ( news.cover_images !=null&&news.cover_images.size()>0){
+            SystemManager.getBaseWebService().displayImg(holder.rightImg, Engine.config.host + news.cover_images.get(0).path);
+           // holder.rightImg.setImageUrl(Engine.config.host + news.cover_images.get(0).path,);
+        }
     }
 
 }
